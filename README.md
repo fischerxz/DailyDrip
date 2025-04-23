@@ -44,17 +44,15 @@
 
 ---
 
-## Timeline & Responsibilities (Apr 22 – May 5)
+## Timeline (Apr 22 – May 5)
 
-| Dates             | Goals                                                      | Who                 |
-|-------------------|------------------------------------------------------------|---------------------|
-| **Apr 22 – Apr 28** | – Repo & UI scaffold<br>– Onboarding + preferences flow<br>– Auth & DB setup<br>– Figma mockups for dashboard | Engineer & Designer |
-| **Apr 29 – May 5**  | – News ingestion + DB schema<br>– GPT summarization API<br>– Dashboard & detail-view UI<br>– Scheduling & delivery<br>– Final polish & README write-up | Engineer & Designer |
+| Dates           | Goals                                                                                             |
+|-----------------|---------------------------------------------------------------------------------------------------|
+| **Apr 22 – 24** | - Initialize repo, install dependencies<br>- Scaffold Next.js app & Tailwind<br>- Build onboarding UI & `InterestSelector` component |
+| **Apr 25 – 28** | - Implement user auth & preferences storage (NextAuth.js/Auth0 + PostgreSQL)<br>- Set up RSS/NewsAPI ingestion service & database schema |
+| **Apr 29 – May 2** | - Create GPT summarization endpoint and test with sample data<br>- Build Dashboard with `CategoryTabs` and `EventCard` components<br>- Implement Detail-view modal |
+| **May 3 – 5**   | - Configure scheduling (cron/AWS EventBridge) and email delivery (SendGrid/SES)<br>- Add Search & Archive functionality<br>- Polish UI, write README, prepare demo |
 
----
 
-### Team of 2
-- **Software Engineer**: backend, API integration, scheduling  
-- **Designer**: Figma mocks, UI components, styling & accessibility  
 
-**Meetings:** one 30 min sync/week (Zoom) + async updates via Slack.  
+
