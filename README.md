@@ -4,8 +4,7 @@
 ---
 
 ## Application Description  
-**DailyDrip** pulls headlines from top outlets (BBC, Yahoo Finance, Reuters, etc.) and leverages GPT-4 to craft a concise, personalized daily news digest—so users see only the stories they care about.
-
+**DailyDrip**  DailyDrip tackles information overload in today’s fragmented news landscape. With hundreds of headlines published across outlets like BBC, Yahoo Finance, and Reuters, it’s easy to miss the stories that matter to you. DailyDrip aggregates all those headlines, filters them by each user’s chosen topics, and then leverages LLM to distill the top “big events” into a clear, personalized daily digest—so you spend minutes reading, not hours searching.
 ---
 
 ## Features & Technologies
