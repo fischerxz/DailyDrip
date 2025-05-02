@@ -1,0 +1,151 @@
+.topic-card {
+  border-radius: 20px;
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 260px;
+  /* min-height: 200px; */
+  /* background: inherit; */
+  position: relative;
+  break-inside: avoid;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.topic-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-inner {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+.topic-title {
+  color: black;
+  font-size: 24px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.topic-summary {
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 28px;
+  margin-bottom: 2.5rem;
+}
+
+.topic-summary .highlighted-word {
+  font-weight: 600;
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.topic-content {
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+.topic-content a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.topic-card-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.read-time {
+  display: inline-flex;
+  font-family: Helvetica, sans-serif;
+  opacity: 0.8;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.50);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.read-time-icon {
+  font-size: 16px;
+}
+
+.view-sources {
+  position: static;
+  right: unset;
+  bottom: unset;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1F84A3;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 300;
+  text-decoration: underline;
+  line-height: 24px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.view-sources:hover {
+  opacity: 0.8;
+}
+
+.sources-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  background: none;
+  clip-path: none;
+  display: inline-block;
+}
+
+.topic-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.topic-logo-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+} 

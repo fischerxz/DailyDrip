@@ -1,68 +1,110 @@
 # DailyDrip
 
-A personalized news digest system that fetches, summarizes, and delivers news based on user preferences.
+A personalized news digest application that fetches, summarizes, and delivers news based on user preferences.
 
 ## Project Structure
 
-- **frontend**: React-based UI for user login, preferences, and digest display
-- **backend**: FastAPI server handling article fetching, summarization, and storage
-- **database**: MongoDB configuration and schemas
-- **embedding**: FAISS vector database for semantic search
+```
+DailyDrip/
+├── frontend/               # React/HTML frontend
+│   ├── public/             # Static assets
+│   └── src/                # Frontend source code
+├── backend/                # FastAPI backend
+│   ├── api/                # API routes
+│   ├── models/             # Database models
+│   ├── services/           # Business logic
+│   └── utils/              # Utility functions
+├── database/               # Database setup and migrations
+├── scripts/                # Utility scripts
+└── .env                    # Environment variables
+```
 
 ## Features
 
 - User authentication and preference management
-- Automated news fetching from NewsAPI
+- News fetching from various sources via NewsAPI
 - Article summarization using OpenAI GPT
-- Personalized news digest generation
-- Article search capabilities
+- Personalized news digest creation
+- Vector-based article search and recommendations
+
+## Technology Stack
+
+- **Frontend**: React/HTML+JS
+- **Backend**: FastAPI
+- **Database**: MongoDB
+- **Vector Search**: FAISS
+- **AI**: OpenAI GPT for summarization
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 14+
-- MongoDB
+- Node.js (v16 or higher)
+- Python (v3.8 or higher)
+- MongoDB (local or Atlas)
+- API keys for NewsAPI and OpenAI
 
-### Setup
+### Local Development Setup
 
-1. Clone the repository
-2. Install backend dependencies:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/DailyDrip.git
+   cd DailyDrip
    ```
+
+2. **Set up environment variables**
+   - Copy `.env.example` to `.env` (if available)
+   - Add your API keys and configuration:
+     ```
+     NEWSAPI_KEY=your_newsapi_key
+     OPENAI_API_KEY=your_openai_api_key
+     MONGODB_URI=your_mongodb_uri
+     ```
+
+3. **Backend Setup**
+   ```bash
    cd backend
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
+   uvicorn main:app --reload
    ```
-3. Install frontend dependencies:
-   ```
+
+4. **Frontend Setup**
+   ```bash
    cd frontend
    npm install
-   ```
-4. Set up environment variables in `.env`
-5. Start the application:
-   ```
-   # In one terminal
-   cd backend
-   python main.py
-   
-   # In another terminal
-   cd frontend
-   npm start
+   npm run dev
    ```
 
-## MVP Plan
 
-1. Basic user authentication
-2. News fetching from NewsAPI
-3. Article summarization with OpenAI
-4. Simple digest display
-5. Preference-based filtering
+## Environment Variables
 
-## Future Enhancements
+```
+NEWSAPI_KEY=your_newsapi_key
+OPENAI_API_KEY=your_openai_api_key
+MONGODB_URI=your_mongodb_uri
+```
 
-- LangChain integration for advanced digest generation
-- More sophisticated recommendation algorithms
-- Mobile app version
+## Development
+
+```bash
+# Backend
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+# Frontend
+cd frontend
+npm install
+npm start
+```
+
+## License
+
+MIT
 
 ## Application Description  
 **DailyDrip**  DailyDrip tackles information overload in today's fragmented news landscape. With hundreds of headlines published across outlets like BBC, Yahoo Finance, and Reuters, it's easy to miss the stories that matter to you. DailyDrip aggregates all those headlines, filters them by each user's chosen topics, and then leverages LLM to distill the top "big events" into a clear, personalized daily digest—so you spend minutes reading, not hours searching.
