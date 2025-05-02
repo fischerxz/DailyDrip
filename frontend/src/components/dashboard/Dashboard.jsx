@@ -8,6 +8,7 @@ import GeneralLogo from '../../assets/images/General_Avatars.png';
 import ScienceLogo from '../../assets/images/Science_Avatars.png';
 import SportsLogo from '../../assets/images/Sports_Avatars.png';
 import EntertainmentLogo from '../../assets/images/Entertainment_Avatars.png';
+import SearchLogo from '../../assets/images/Search_Avatars.png';
 import ExpandedTopicModal from '../topics/ExpandedTopicModal';
 
 const topicData = [
@@ -50,6 +51,8 @@ const topicData = [
 
 const Dashboard = ({ name, topics = [] }) => {
   const [expandedTopic, setExpandedTopic] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const getGreeting = () => {
     const hour = new Date().getHours();
@@ -104,6 +107,25 @@ const Dashboard = ({ name, topics = [] }) => {
     }
   };
 
+  const handleSearch = async (e) => {
+    if (e.key === 'Enter' && searchQuery.trim()) {
+      // ⭐️⭐️ placeholder for backend ⭐️⭐️:
+      // - Send search query to backend
+      // - Backend will fetch news from API
+      // - Return search results with summary
+      const mockSearchResult = {
+        topic: searchQuery,
+        logo: SearchLogo,
+        backgroundColor: 'rgba(255, 235, 238, 0.5)', // FFEBEE with 50% opacity
+        content: `Here's what's happening with ${searchQuery}...`, // This will be replaced with actual summary from backend
+        readTime: '3-min read'
+      };
+      
+      setSearchResults([mockSearchResult, ...searchResults]);
+      setSearchQuery('');
+    }
+  };
+
   return (
     <div className="dashboard-container">
       {/* Overlay and Modal */}
@@ -125,7 +147,14 @@ const Dashboard = ({ name, topics = [] }) => {
       </div>
       <div className="ai-digest-center">
         <div className="digest-text ai-digest-label">What do you want to explore today?</div>
-        <input type="text" className="digest-input ai-digest-input" placeholder="Search topics..." />
+        <input
+          type="text"
+          className="digest-input ai-digest-input"
+          placeholder="Search topics..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyDown={handleSearch}
+        />
         <div className="chevron-down">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 15L18 23L26 15" stroke="#A0A0A0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -137,6 +166,17 @@ const Dashboard = ({ name, topics = [] }) => {
         <div className="subtitle">Here's a quick rundown of what's happening in the world you care about.</div>
         
         <div className="topics-grid">
+        {searchResults.map(({ topic, logo, backgroundColor, content, readTime }) => (
+            <TopicCard
+              key={topic}
+              topic={topic}
+              logo={logo}
+              backgroundColor={backgroundColor}
+              content={content}
+              readTime={readTime}
+              onClick={() => setExpandedTopic(topic)}
+            />
+          ))} 
           {filteredTopics.map(({ topic, logo, backgroundColor }) => (
             <TopicCard
               key={topic}

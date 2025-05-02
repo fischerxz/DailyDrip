@@ -8,8 +8,6 @@ import GeneralLogo from '../../assets/images/General_Avatars.png';
 import ScienceLogo from '../../assets/images/Science_Avatars.png';
 import ArticleImg1 from '../../assets/images/article1.png';
 import ArticleImg2 from '../../assets/images/article2.png';
-import ArticleImg3 from '../../assets/images/article3.png';
-import ArticleImg4 from '../../assets/images/article4.png';
 import HandThumbUp from '../../assets/icons/hand-thumb-up.png';
 import HandThumbDown from '../../assets/icons/hand-thumb-down.png';
 import CheckIcon from '../../assets/icons/check.png';
@@ -23,7 +21,8 @@ const topicStyles = {
   Entertainment: { background: '#FEF7F0' },
   Business: { background: '#F3FCF9' },
   General: { background: '#EFF2F5' },
-  Science: { background: '#F1F0F9' }
+  Science: { background: '#F1F0F9' },
+  Search: { background: '#FFF5F6' }
 };
 
 const topicLogos = {
@@ -33,7 +32,8 @@ const topicLogos = {
   Entertainment: EntertainmentLogo,
   Business: BusinessLogo,
   General: GeneralLogo,
-  Science: ScienceLogo
+  Science: ScienceLogo,
+  Search: SearchLogo
 };
 
 // ⭐️⭐️ placeholder for backend ⭐️⭐️:
