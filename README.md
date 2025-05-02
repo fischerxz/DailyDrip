@@ -1,74 +1,68 @@
 # DailyDrip
 
-A personalized news digest application that fetches, summarizes, and delivers news based on user preferences.
+A personalized news digest system that fetches, summarizes, and delivers news based on user preferences.
 
 ## Project Structure
 
-```
-DailyDrip/
-├── frontend/               # React/HTML frontend
-│   ├── public/             # Static assets
-│   └── src/                # Frontend source code
-├── backend/                # FastAPI backend
-│   ├── api/                # API routes
-│   ├── models/             # Database models
-│   ├── services/           # Business logic
-│   └── utils/              # Utility functions
-├── database/               # Database setup and migrations
-├── scripts/                # Utility scripts
-└── .env                    # Environment variables
-```
+- **frontend**: React-based UI for user login, preferences, and digest display
+- **backend**: FastAPI server handling article fetching, summarization, and storage
+- **database**: MongoDB configuration and schemas
+- **embedding**: FAISS vector database for semantic search
 
 ## Features
 
 - User authentication and preference management
-- News fetching from various sources via NewsAPI
+- Automated news fetching from NewsAPI
 - Article summarization using OpenAI GPT
-- Personalized news digest creation
-- Vector-based article search and recommendations
-
-## Technology Stack
-
-- **Frontend**: React/HTML+JS
-- **Backend**: FastAPI
-- **Database**: MongoDB
-- **Vector Search**: FAISS
-- **AI**: OpenAI GPT for summarization
+- Personalized news digest generation
+- Article search capabilities
 
 ## Getting Started
 
-1. Clone this repository
-2. Set up environment variables in `.env`
-3. Install dependencies for frontend and backend
-4. Run the development servers
+### Prerequisites
 
-## Environment Variables
+- Python 3.8+
+- Node.js 14+
+- MongoDB
 
-```
-NEWSAPI_KEY=your_newsapi_key
-OPENAI_API_KEY=your_openai_api_key
-MONGODB_URI=your_mongodb_uri
-```
+### Setup
 
-## Development
+1. Clone the repository
+2. Install backend dependencies:
+   ```
+   cd backend
+   pip install -r requirements.txt
+   ```
+3. Install frontend dependencies:
+   ```
+   cd frontend
+   npm install
+   ```
+4. Set up environment variables in `.env`
+5. Start the application:
+   ```
+   # In one terminal
+   cd backend
+   python main.py
+   
+   # In another terminal
+   cd frontend
+   npm start
+   ```
 
-```bash
-# Backend
-cd backend
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
+## MVP Plan
 
-# Frontend
-cd frontend
-npm install
-npm start
-```
+1. Basic user authentication
+2. News fetching from NewsAPI
+3. Article summarization with OpenAI
+4. Simple digest display
+5. Preference-based filtering
 
-## License
+## Future Enhancements
 
-MIT
+- LangChain integration for advanced digest generation
+- More sophisticated recommendation algorithms
+- Mobile app version
 
 ## Application Description  
 **DailyDrip**  DailyDrip tackles information overload in today's fragmented news landscape. With hundreds of headlines published across outlets like BBC, Yahoo Finance, and Reuters, it's easy to miss the stories that matter to you. DailyDrip aggregates all those headlines, filters them by each user's chosen topics, and then leverages LLM to distill the top "big events" into a clear, personalized daily digest—so you spend minutes reading, not hours searching.
