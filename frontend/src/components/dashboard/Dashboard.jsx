@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import '../styles/Dashboard.css';
-import TopicCard from './TopicCard';
-import TechLogo from '../assets/images/Tech_Avatars.png';
-import HealthLogo from '../assets/images/Health_Avatars.png';
-import BusinessLogo from '../assets/images/Business_Avatars.png';
-import GeneralLogo from '../assets/images/General_Avatars.png';
-import ScienceLogo from '../assets/images/Science_Avatars.png';
-import SportsLogo from '../assets/images/Sports_Avatars.png';
-import EntertainmentLogo from '../assets/images/Entertainment_Avatars.png';
-import ExpandedTopicModal from './ExpandedTopicModal';
+import '../../styles/dashboard/Dashboard.css';
+import TopicCard from '../topics/TopicCard';
+import TechLogo from '../../assets/images/Tech_Avatars.png';
+import HealthLogo from '../../assets/images/Health_Avatars.png';
+import BusinessLogo from '../../assets/images/Business_Avatars.png';
+import GeneralLogo from '../../assets/images/General_Avatars.png';
+import ScienceLogo from '../../assets/images/Science_Avatars.png';
+import SportsLogo from '../../assets/images/Sports_Avatars.png';
+import EntertainmentLogo from '../../assets/images/Entertainment_Avatars.png';
+import ExpandedTopicModal from '../topics/ExpandedTopicModal';
 
 const topicData = [
   {
@@ -69,7 +69,10 @@ const Dashboard = ({ name, topics = [] }) => {
   // Filter topicData to only include selected topics
   const filteredTopics = topicData.filter(topic => topics.includes(topic.topic));
 
-  // Placeholder content for each topic
+  // ⭐️⭐️ placeholder for backend ⭐️⭐️: 
+  // - Each topic should have a 35-40 word summary
+  // - Read time should be calculated based on word count (average reading speed: 200 words/minute)
+  // - Topics should be fetched from backend based on user preferences
   const topicContent = {
     'Technology': {
       content: 'AI integration has revolutionized industries with generative models powering creative workflows and decision-making systems. Quantum computing achieved practical breakthroughs in drug discovery and materials science. The global semiconductor supply chain has stabilized following years of shortages, enabling ambitious next-generation hardware deployments.',

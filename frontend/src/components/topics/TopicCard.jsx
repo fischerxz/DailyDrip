@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/TopicCard.css';
-import ArrowsPointingOutIcon from '../assets/icons/arrows-pointing-out.png';
+import '../../styles/topics/TopicCard.css';
+import ArrowsPointingOutIcon from '../../assets/icons/arrows-pointing-out.png';
 
 const TopicCard = ({ topic, logo, backgroundColor, content, readTime, onClick }) => {
   const getHighlightColor = (topic) => {

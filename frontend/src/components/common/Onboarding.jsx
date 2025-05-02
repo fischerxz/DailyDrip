@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/Onboarding.css';
-import arrowRightIcon from '../assets/icons/arrow-right.png';
-import logo from '../assets/images/logo.png';
+import '../../styles/common/Onboarding.css';
+import arrowRightIcon from '../../assets/icons/arrow-right.png';
+import logo from '../../assets/images/logo.png';
 
 const Onboarding = ({ onComplete }) => {
   const [step, setStep] = useState(0);
@@ -29,6 +29,14 @@ const Onboarding = ({ onComplete }) => {
 
   const handleComplete = () => {
     if (typeof onComplete === 'function') {
+      // ⭐️⭐️ placeholder for backend ⭐️⭐️:
+      // - Send user preferences to backend:
+      //   - User name
+      //   - Selected topics
+      //   - Timestamp
+      //   - Device info
+      // - Create user profile
+      // - Initialize user preferences
       onComplete(name, selectedTopics);
     } else {
       console.error('onComplete is not a function');
