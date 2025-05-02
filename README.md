@@ -37,10 +37,46 @@ DailyDrip/
 
 ## Getting Started
 
-1. Clone this repository
-2. Set up environment variables in `.env`
-3. Install dependencies for frontend and backend
-4. Run the development servers
+### Prerequisites
+
+- Node.js (v16 or higher)
+- Python (v3.8 or higher)
+- MongoDB (local or Atlas)
+- API keys for NewsAPI and OpenAI
+
+### Local Development Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/DailyDrip.git
+   cd DailyDrip
+   ```
+
+2. **Set up environment variables**
+   - Copy `.env.example` to `.env` (if available)
+   - Add your API keys and configuration:
+     ```
+     NEWSAPI_KEY=your_newsapi_key
+     OPENAI_API_KEY=your_openai_api_key
+     MONGODB_URI=your_mongodb_uri
+     ```
+
+3. **Backend Setup**
+   ```bash
+   cd backend
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   uvicorn main:app --reload
+   ```
+
+4. **Frontend Setup**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
 
 ## Environment Variables
 
